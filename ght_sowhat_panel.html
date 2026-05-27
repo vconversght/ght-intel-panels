@@ -97,10 +97,13 @@ Give a sharp, senior-level "so what" — the 2-3 most commercially meaningful ta
 
   try {
     const res = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY,
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-goog-api-key': 'AIzaSyDrtEChwWblizGGAeqArhKmYtKYunhhDG4'
+      },
         body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
       }
     );
